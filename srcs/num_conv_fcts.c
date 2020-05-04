@@ -26,9 +26,9 @@ int	d_conv(va_list args, t_flags flg, char **buff, int *c_count)
 		arg = ft_add_zeros(arg, flg.width - len);
 	else if (flg.prec > len)
 	{
-		if (i_tmp < 0)
-			arg = ft_add_zeros(arg, flg.prec - (len - 1));
-		else
+		/* if (i_tmp < 0) */
+		/* 	arg = ft_add_zeros(arg, flg.prec - (len - 1)); */
+		/* else */
 			arg = ft_add_zeros(arg, flg.prec - len);
 	}
 	if (flg.prec == 0 && ft_strcmp(arg, "0") == 0)
