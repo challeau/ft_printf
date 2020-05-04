@@ -14,14 +14,23 @@
 
 int		f_align(const char **format)
 {
-	int	a;
+	bool dash;
+	bool zero;
 
-	a = 0;
-	while (**format == '-' && (a = 1))
-		*format += 1;
-	while (**format == '0' && (a = 2))
-		*format += 1;
-	return (a);
+	dash = false;
+	zero = false;
+	while (**format == '0' || **format == '-')
+	{
+		while (**format == '0' && (zero = true))
+			*format += 1;
+		while (**format == '-' && (dash = true))
+			*format += 1;
+	}
+	if (dash == true)
+		return (1);
+	if (zero == true)
+		return (2);
+	return (0);
 }
 
 int		f_width(const char **format, va_list args)
