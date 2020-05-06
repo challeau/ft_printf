@@ -24,7 +24,7 @@ int	d_conv(va_list args, t_flags flg, char **buff, int *c_count)
 	len = ft_strlen(arg);
 	if (flg.align == 2 && len < flg.width && flg.prec < 0)
 		arg = ft_add_zeros(arg, flg.width - len);
-	else if (flg.prec > (len = i_tmp < 0 ? len -1 : len))
+	else if (flg.prec > (len = i_tmp < 0 ? len - 1 : len))
 		arg = ft_add_zeros(arg, flg.prec - len);
 	if (flg.prec == 0 && ft_strcmp(arg, "0") == 0)
 		arg[0] = '\0';
