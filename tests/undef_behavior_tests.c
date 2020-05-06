@@ -1,6 +1,6 @@
 /* Make sure these don't segfault */
 #include <stdio.h>
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
 int main(void)
 {
@@ -49,11 +49,8 @@ int main(void)
 	printf("%0-8.3x", 8375);
 	printf("%0-2.7x", 3267);
 	printf("%0-3.3x", 6983);
-	printf("%x", INT_MIN);
-	printf("%x", INT_MAX);
 	printf("%05s", "hello");
 	printf("%0s", "hello");
-	printf("%-s", "hello");
 	printf("%05c", 'a');
 	printf("%0c", 'a');
 	printf("%-021s", "abc");
@@ -80,6 +77,5 @@ int main(void)
 	printf("%x", NULL); 
 	printf("%X", NULL); 
 	printf("%f", NULL); 
-	printf("%s", NULL); 
 	printf("%c", NULL);
 }
